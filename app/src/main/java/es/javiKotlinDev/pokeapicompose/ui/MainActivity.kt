@@ -1,4 +1,4 @@
-package com.example.pokeapicompose
+package es.javiKotlinDev.pokeapicompose.ui
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -10,16 +10,18 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.pokeapicompose.ui.theme.PokeApiComposeTheme
+import es.javiKotlinDev.pokeapicompose.ui.theme.PokeApiComposeTheme
+import dagger.hilt.android.AndroidEntryPoint
 
-class MainActivity : ComponentActivity() {
+@AndroidEntryPoint
+class MainActivity: ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             PokeApiComposeTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
-                    Greeting("Hola jetpack compose")
+                    Greeting("jetpack compose")
                 }
             }
         }

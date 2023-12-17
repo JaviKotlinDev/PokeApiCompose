@@ -1,4 +1,4 @@
-package com.example.pokeapicompose.ui.theme
+package es.javiKotlinDev.pokeapicompose.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
