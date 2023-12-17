@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.pokeapicompose"
+    namespace = "es.javiKotlinDev.pokeapicompose"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.pokeapicompose"
+        applicationId = "es.javiKotlinDev.pokeapicompose"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -18,6 +18,7 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+
     }
 
     buildTypes {
@@ -29,24 +30,31 @@ android {
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
     buildFeatures {
         compose = true
     }
+
     composeOptions {
         kotlinCompilerExtensionVersion = "1.4.3"
     }
+
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+
+
 }
 
 dependencies {
@@ -66,4 +74,9 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+
+    //Dagger Hilt
+    implementation("com.google.dagger:hilt-android:2.49")
+    annotationProcessor("androidx.hilt:hilt-compiler:1.1.0")
+
 }
