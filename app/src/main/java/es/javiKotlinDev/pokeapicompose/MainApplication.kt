@@ -1,4 +1,4 @@
-package com.example.pokeapicompose
+package es.javiKotlinDev.pokeapicompose
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

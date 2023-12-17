@@ -1,4 +1,4 @@
-package com.example.pokeapicompose.utils
+package es.javiKotlinDev.pokeapicompose.utils
 
 fun Boolean?.isTrue() = this == true
 

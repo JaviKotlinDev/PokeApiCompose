@@ -1,4 +1,4 @@
-package com.example.pokeapicompose.di
+package es.javiKotlinDev.pokeapicompose.di
 
 import dagger.Module
 import dagger.hilt.InstallIn

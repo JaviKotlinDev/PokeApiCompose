@@ -1,4 +1,4 @@
-package com.example.pokeapicompose
+package es.javiKotlinDev.pokeapicompose
 
 import org.junit.Test
 
