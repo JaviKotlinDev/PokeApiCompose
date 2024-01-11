@@ -15,9 +15,10 @@ import androidx.compose.ui.unit.dp
 import es.javiKotlinDev.pokeapicompose.ui.theme.teal
 
 @Composable
-fun AcceptButton(onClick: () -> Unit) {
+fun AcceptButton(
+    onClick: () -> Unit
+) {
     CustomAcceptButton(
-        title = "Aceptar",
         onClick = { onClick() }
     )
 }
@@ -25,16 +26,12 @@ fun AcceptButton(onClick: () -> Unit) {
 @Composable
 private fun CustomAcceptButton(
     modifier: Modifier = Modifier,
-    title: String,
     onClick: () -> Unit,
 ) {
-
     Button(
         onClick = { onClick() },
         colors = buttonColors(
             containerColor = teal,
-            disabledContainerColor = Color.Red,
-            disabledContentColor = Color.Green
         ),
         modifier = modifier
             .wrapContentSize()
@@ -42,11 +39,10 @@ private fun CustomAcceptButton(
     ) {
         onClick()
         Text(
-            text = title,
+            text = "Aceptar",
             color = Color.Black
         )
     }
-
 }
 
 @Preview(showBackground = true, showSystemUi = true)
@@ -56,6 +52,6 @@ private fun AcceptButtonPreview() {
         AcceptButton(onClick = { clickExample() })
     }
 }
-private fun clickExample() {
+fun clickExample() {
     Log.e("onClickAceptButton", "Se ha realizado click en boton aceptar")
 }
