@@ -19,15 +19,27 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import es.javiKotlinDev.pokeapicompose.R
 import es.javiKotlinDev.pokeapicompose.ui.customs.buttoms.MenuButton
-import es.javiKotlinDev.pokeapicompose.ui.theme.whiteTransparent
+import es.javiKotlinDev.pokeapicompose.ui.theme.darkTransparent
 
 @Composable
 fun MenuOptionsScreen(
     viewModel: MenuOptionsViewModel = hiltViewModel(),
     navigateToSearchPokemon: () -> Unit,
+    navigateToPokedex: () -> Unit,
+    navigateToTypes: () -> Unit,
+    navigateToBerries: () -> Unit,
+    navigateToItems: () -> Unit,
+    navigateToGenerations: () -> Unit,
 ) {
     MenuBackground()
-    MenuOptions()
+    MenuOptions(
+        navigateToSearchPokemon = navigateToSearchPokemon,
+        navigateToPokedex = navigateToPokedex,
+        navigateToTypes = navigateToTypes,
+        navigateToBerries = navigateToBerries,
+        navigateToItems = navigateToItems,
+        navigateToGenerations = navigateToGenerations,
+    )
 }
 
 @Composable
@@ -43,19 +55,27 @@ private fun MenuBackground() {
 @Composable
 private fun MenuOptions(
     modifier: Modifier = Modifier,
+    navigateToSearchPokemon: () -> Unit,
+    navigateToPokedex: () -> Unit,
+    navigateToTypes: () -> Unit,
+    navigateToBerries: () -> Unit,
+    navigateToItems: () -> Unit,
+    navigateToGenerations: () -> Unit,
 ) {
     Column(
         modifier = Modifier
             .fillMaxSize()
             .padding(
-                top = 120.dp,
+                top = 130.dp,
                 bottom = 120.dp,
                 start = 35.dp,
                 end = 35.dp
             )
-            .background(whiteTransparent),
+            .background(darkTransparent),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+
+        Spacer(modifier = Modifier.padding(top = 30.dp))
 
         Row(
             modifier = Modifier
@@ -67,7 +87,7 @@ private fun MenuOptions(
                     .weight(1f),
                 text = "Pokemon",
                 imageResId = R.drawable.pokemon,
-                onClick = { /* Acción del botón 1 */ },
+                onClick = { navigateToSearchPokemon() },
             )
 
             MenuButton(
@@ -76,7 +96,7 @@ private fun MenuOptions(
                     .weight(1f),
                 text = "Pokedex",
                 imageResId = R.drawable.pokedex,
-                onClick = { /* Acción del botón 2 */ },
+                onClick = { navigateToPokedex() },
             )
         }
 
@@ -89,7 +109,7 @@ private fun MenuOptions(
                     .weight(1f),
                 text = "Types",
                 imageResId = R.drawable.electric_logo,
-                onClick = { /* Acción del botón 3 */ },
+                onClick = { navigateToTypes()},
             )
 
             MenuButton(
@@ -98,7 +118,7 @@ private fun MenuOptions(
                     .weight(1f),
                 text = "Berries",
                 imageResId = R.drawable.berries,
-                onClick = { /* Acción del botón 4 */ },
+                onClick = { navigateToBerries() },
             )
         }
 
@@ -111,7 +131,7 @@ private fun MenuOptions(
                     .weight(1f),
                 text = "Items",
                 imageResId = R.drawable.items,
-                onClick = { /* Acción del botón 5 */ },
+                onClick = { navigateToItems() },
             )
 
             MenuButton(
@@ -120,7 +140,7 @@ private fun MenuOptions(
                     .weight(1f),
                 text = "Generations",
                 imageResId = R.drawable.generations,
-                onClick = { /* Acción del botón 6 */ },
+                onClick = { navigateToGenerations() },
             )
         }
     }
@@ -130,5 +150,12 @@ private fun MenuOptions(
 @Composable
 private fun PreviewMenuOptions() {
     MenuBackground()
-    MenuOptions()
+    MenuOptions(
+        navigateToSearchPokemon = { },
+        navigateToPokedex = { },
+        navigateToTypes = { },
+        navigateToBerries = { },
+        navigateToItems = { },
+        navigateToGenerations = { },
+    )
 }
