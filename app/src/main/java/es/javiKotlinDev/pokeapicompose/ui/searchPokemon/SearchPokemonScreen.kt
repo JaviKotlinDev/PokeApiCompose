@@ -4,6 +4,8 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -53,12 +55,13 @@ private fun SearchPokemonView() {
     Column (modifier = Modifier
         .fillMaxSize()
         .background(dark)
+        .padding(bottom = 30.dp),
     ){
         Row(
-            verticalAlignment = Alignment.CenterVertically,
+            verticalAlignment = Alignment.Top,
             modifier = Modifier
                 .fillMaxWidth()
-                .wrapContentHeight()
+                .fillMaxHeight(0.9f)
                 .padding(top = 30.dp, start = 15.dp, end = 15.dp)
                 .background(white)
         ) {
@@ -66,14 +69,14 @@ private fun SearchPokemonView() {
                 modifier = Modifier
                     .width(150.dp)
                     .height(150.dp)
-                    .padding(start = 20.dp, top = 20.dp),
+                    .padding(start = 20.dp, top = 30.dp),
                 painter = painterResource(id = R.drawable.pokemon),
                 contentDescription = null)
             Column (
                 horizontalAlignment = Alignment.Start,
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(start = 5.dp, end = 10.dp),
+                    .padding(start = 5.dp, top = 40.dp,end = 10.dp),
             ){
                 Text(
                     text = "ID: 001",
@@ -88,6 +91,48 @@ private fun SearchPokemonView() {
                     fontWeight = FontWeight.Bold,
                     maxLines = 1,
                 )
+                Spacer(modifier = Modifier.padding(top = 10.dp))
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                ) {
+                    Text(
+                        text = "Tipo: ",
+                        fontSize = 14.sp,
+                        color = dark,
+                        fontWeight = FontWeight.Bold,
+                        maxLines = 1,
+                    )
+                    Text(
+                        text = "Eléctrico",
+                        fontSize = 14.sp,
+                        color = dark,
+                        fontWeight = FontWeight.Bold,
+                        maxLines = 1,
+                    )
+                }
+
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                ) {
+                    Text(
+                        text = "Peso: ",
+                        fontSize = 14.sp,
+                        color = dark,
+                        fontWeight = FontWeight.Bold,
+                        maxLines = 1,
+                    )
+                    Text(
+                        text = "weight",
+                        fontSize = 14.sp,
+                        color = dark,
+                        fontWeight = FontWeight.Bold,
+                        maxLines = 1,
+                    )
+                }
             }
         }
         Row(
