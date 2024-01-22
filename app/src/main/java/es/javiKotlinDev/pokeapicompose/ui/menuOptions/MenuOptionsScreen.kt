@@ -68,8 +68,8 @@ private fun MenuOptions(
             .padding(
                 top = 130.dp,
                 bottom = 120.dp,
-                start = 35.dp,
-                end = 35.dp
+                start = 30.dp,
+                end = 30.dp
             )
             .background(darkTransparent),
         horizontalAlignment = Alignment.CenterHorizontally
